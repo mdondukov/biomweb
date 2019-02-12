@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block title %}<title>{% trans 'BIOM' %}: {% trans 'Directions of activity' %}</title>{% endblock %}
+
+{% block head_image %}
+    <img src="/media/h_image.jpg" alt="{% trans 'Directions of activity' %}"/>
+{% endblock %}
+
+{% block content %}
+
+{% if directions %}
+    <ul>
+    {% for direction in directions %}
+        <li><a href="{% url 'activity:detail' direction.slug %}">{{ direction.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No directions are available.</p>
+{% endif %}
+
+{% endblock %}

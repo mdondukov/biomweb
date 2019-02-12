@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block hero %}
+    <section class="hero is-fullheight is-success is-bold" style="background-image: url('/media/h_image.jpg');">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    {% trans 'Hello World!' %}
+                </h1>
+                <h2 class="subtitle">
+                    {% trans 'This is a homepage.' %}
+                </h2>
+            </div>
+        </div>
+    </section>
+{% endblock %}

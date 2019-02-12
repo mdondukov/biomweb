@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>{{ object.title }}</title>{% endblock %}
+
+{% block hero %}
+    <section class="hero is-large is-success is-bold"
+             style="background-size: cover;
+                     background-position: center center;
+                     background-image: url('{{ object.head_image.url }}');">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1">
+                    {{ object.title }}
+                </h1>
+                <h2 class="subtitle is-1">
+                    {{ object.summary }}
+                </h2>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            {{ object.content | safe }}
+        </div>
+    </section>
+{% endblock %}

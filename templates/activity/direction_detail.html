@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>{{ direction.title }}</title>{% endblock %}
+
+{% block head_image %}
+    <img src="/media/h_image.jpg" alt="{{ direction.title }}"/>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ direction.title }}</h1>
+    <em>{{ direction.summary }}</em>
+    <p>{{ direction.content | safe }}</p>
+{% endblock %}
